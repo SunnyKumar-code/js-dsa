@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outerDiv{
+            border: 10px solid green;
+            padding: 10px;
+           text-align: center;
+        }
+        #innerDiv{
+            border: 10px solid rgb(8, 192, 149);
+            padding: 10px;
+           text-align: center;
+        }
+        #midDiv{
+            border: 10px solid rgb(242, 87, 4);
+            padding: 10px;
+           text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <h1>Event bubbling opr capturing</h1>
+    <div id="outerDiv">Outer Div
+        <div id="midDiv">MidDiv
+            <div id="innerDiv">
+                innerDiv
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const outerDiv = document.getElementById('outerDiv').addEventListener('click',()=>{
+            console.log('i am ur outer div');
+            
+        },true)
+        const midDiv = document.getElementById('midDiv').addEventListener('click',()=>{
+            console.log('i am ur middle div');
+            
+        },true)
+        const innerDiv = document.getElementById('innerDiv').addEventListener('click',()=>{
+            console.log('i am ur inner div');
+            
+        },true)
+    </script>
+</body>
+</html>
